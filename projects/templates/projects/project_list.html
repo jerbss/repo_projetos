@@ -1,0 +1,26 @@
+{# filepath: /C:/PROJETO/repo_projetos/projects/templates/projects/project_list.html #}
+{% extends 'base.html' %}
+
+{% block title %}Projetos - {{ block.super }}{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Projetos</h1>
+<div class="row">
+    {% for project in projects %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{ project.cover_image.url }}" class="card-img-top" alt="{{ project.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.short_info }}</p>
+                <a href="{% url 'projects:detail' project.id %}" class="btn btn-primary">Ver mais</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col">
+        <p>Nenhum projeto cadastrado.</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

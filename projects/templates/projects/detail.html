@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ project.title }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <img src="{{ project.cover_image.url }}" class="img-fluid mb-4" alt="{{ project.title }}">
+    <h1 class="mb-3">{{ project.title }}</h1>
+    <p class="lead mb-4">{{ project.short_info }}</p>
+    <div class="project-content">
+        {{ project.body|safe }}
+    </div>
+    <div class="mt-4">
+        <a href="{% url 'projects:list' %}" class="btn btn-secondary">Voltar para Projetos</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{# filepath: /C:/PROJETO/repo_projetos/core/templates/core/home.html #}
+{% extends 'base.html' %}
+
+{% block title %}Home - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Bem-vindo ao Repositório de Projetos</h1>
+    <p class="lead">Explore nossa coleção de projetos interessantes.</p>
+    <hr class="my-4">
+    <p>Clique no botão abaixo para ver todos os projetos.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'projects:list' %}" role="button">Ver Projetos</a>
+</div>
+{% endblock %}
