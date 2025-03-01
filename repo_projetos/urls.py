@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', include('core.urls')),  # Add this line at the top
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('projects/', include('projects.urls')),
